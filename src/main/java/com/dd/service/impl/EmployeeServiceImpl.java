@@ -23,7 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public List<Employee> getAllEmployees() {
 		return employeeRepository.findAll();
 	}
-
+	
 	@Override
 	public Employee getEmployeeById(long id) {
 //		Optional<Employee> employee = employeeRepository.findById(id);
@@ -60,16 +60,5 @@ public class EmployeeServiceImpl implements EmployeeService {
 		employeeRepository.findById(id).orElseThrow(
 				() -> new ResourceNotFoundException("Employee", "Id", id));
 		employeeRepository.deleteById(id);
-	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 }
